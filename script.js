@@ -23457,5 +23457,25 @@ let listeFilms = [
 ];
 
 // Afficher tous les films (Titre, Poster, Année, + si envie)
+let nav = document.getElementsByTagName('nav');
+let header = document.getElementsByTagName('header');
+let card = document.getElementsByClassName('card');
 
+let title = listeFilms.title;
+let year = listeFilms.year;
+let cast = listeFilms.cast;
+let genres = listeFilms.genres;
+let body =  document.body;
+
+listeFilms.forEach(film => {
+  let title = film.title;
+  let img = film.'thumbnail';
+  let year = film.'year';
+  let cast = film.'cast';
+  let genres = film.'genres';
+
+
+  let movieCard = "<div><img src='${thumbnail}'> ${title} ${genres} ${year}</div>"
+  body.insertAdjacentHTML('afterbegin', movieCard);
+});
 //Faire un bouton qui permet de choisir un film aléatoire à regarder ce soir
